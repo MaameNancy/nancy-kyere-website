@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Brand Palette */
+  --foreground-rgb: 10, 10, 10;
+  --background-rgb: 255, 255, 255;
+  --maroon: #800020;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-rgb: 10, 10, 10;
+  }
+}
+
+html {
+  /* Makes the Stage 1 to Stage 2 transition fluid */
+  scroll-behavior: smooth;
+  /* Prevents layout shift on scrollbar appearance */
+  scrollbar-gutter: stable;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  /* High-end font rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Custom Selection Color (Branding touch) */
+::selection {
+  background-color: var(--maroon);
+  color: white;
+}
+
+@layer base {
+  /* Editorial Typography Defaults */
+  h1, h2, h3, h4 {
+    @apply font-serif tracking-tighter;
+  }
+
+  p {
+    @apply font-sans;
+  }
+}
+
+@layer components {
+  /* Helper for the "Editorial Container" */
+  .section-container {
+    @apply max-w-[1440px] mx-auto px-8 md:px-16 w-full;
+  }
+
+  /* Custom Maroon Button (Optional global class) */
+  .btn-maroon {
+    @apply bg-[#800020] text-white px-10 py-5 rounded-full text-[10px] 
+           uppercase tracking-[0.3em] font-bold hover:bg-black 
+           transition-all duration-500 shadow-lg;
+  }
+}
+
+/* Smooth Fade-in for Images to prevent "flashing" */
+img {
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera (Clean look) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

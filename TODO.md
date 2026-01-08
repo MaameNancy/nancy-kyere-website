@@ -1,0 +1,13 @@
+- [x] Add subtle animated gradient background using Framer Motion
+- [x] Add static headline: "Building real opportunities from African ambition." with serif font
+- [x] Implement typing animation for "African Ambition. Practical Execution. Real Confidence." (slow, elegant, one line at a time, blinking cursor, runs once)
+- [x] Add static paragraph below typing animation
+- [x] Retain CTA button
+=======
+- [x] Update Hero.tsx layout to full-screen centered (remove grid, image, add flex centering)
+- [x] Add subtle animated gradient background using Framer Motion
+- [x] Add static headline: "Building real opportunities from African ambition." with serif font
+- [x] Implement typing animation for "African Ambition. Practical Execution. Real Confidence." (slow, elegant, one line at a time, blinking cursor, runs once)
+- [x] Add static paragraph below typing animation
+- [x] Retain CTA button
+- [x] Updated Hero.tsx with provided code and fixed ESLint errors
