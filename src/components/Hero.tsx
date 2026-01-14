@@ -13,8 +13,8 @@ const Hero = () => {
     >
       <div className="relative min-h-[calc(100vh-96px)] w-full flex justify-start items-start">
         
-        {/* DESKTOP IMAGE LAYER - Only visible on md and up */}
-        <div className="absolute inset-0 z-10 pointer-events-none hidden md:block">
+        {/* DESKTOP IMAGE LAYER - Only visible on lg (1024px) and up */}
+        <div className="absolute inset-0 z-10 pointer-events-none hidden lg:block">
           <motion.div
             initial={{ opacity: 0, scale: 1.1 }}
             whileInView={{ opacity: 1, scale: 1.05 }}
@@ -36,13 +36,13 @@ const Hero = () => {
         <div className="relative z-20 w-full max-w-[1400px] mx-auto px-6 sm:px-10 md:px-16 lg:px-24">
           <div className="max-w-xl pt-12 sm:pt-20 md:pt-24 lg:pt-60 ml-0 text-left"> 
             
-            {/* MOBILE-ONLY IMAGE - Disappears on tablet+ */}
+            {/* MOBILE & TABLET IMAGE - Disappears on desktop (lg+) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="md:hidden mb-10 relative w-full h-72 sm:h-96"
+              className="lg:hidden mb-10 relative w-full h-72 sm:h-96 md:h-[500px]"
             >
               <Image
                 src="/profile-2.png"
@@ -61,7 +61,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-serif leading-[1.05] text-gray-950 tracking-tight">
-                You don't need <br />
+                You don&apos;t need <br />
                 another degree.
               </h1>
             </motion.div>
@@ -72,7 +72,7 @@ const Hero = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 1.2, delay: 0.7 }}
-              className="italic text-maroon font-light block mt-2 text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-serif"
+              className="italic text-[#800020] font-light block mt-2 text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-serif"
             >
               You need a plan.
             </motion.span>
@@ -83,7 +83,7 @@ const Hero = () => {
               whileInView={{ opacity: 1, width: 80 }}
               viewport={{ once: true }}
               transition={{ duration: 1, delay: 1.1 }}
-              className="h-[2px] bg-maroon/60 mt-8 mb-10" 
+              className="h-[2px] bg-[#800020]/60 mt-8 mb-10" 
             />
 
             {/* Body Paragraph */}
@@ -127,14 +127,14 @@ const Hero = () => {
                   boxShadow: { duration: 2, repeat: Infinity, ease: "easeInOut" },
                   scale: { type: "spring", stiffness: 400, damping: 10 }
                 }}
-                className="inline-block bg-maroon text-white px-10 py-5 rounded-full text-[11px] uppercase tracking-[0.4em] font-bold shadow-2xl cursor-pointer transition-colors duration-300"
+                className="inline-block bg-[#800020] text-white px-10 py-5 rounded-full text-[11px] uppercase tracking-[0.4em] font-bold shadow-2xl cursor-pointer transition-colors duration-300"
               >
                 Join the community
               </motion.a>
             </motion.div>
 
             {/* Extra padding for mobile scrolling ease */}
-            <div className="h-20 md:h-0" />
+            <div className="h-20 lg:h-0" />
           </div>
         </div>
       </div>
