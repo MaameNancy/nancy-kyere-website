@@ -2,18 +2,18 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
-const HEADER_HEIGHT = 96; 
+const HEADER_HEIGHT = 96;
 
 const Hero = () => {
   return (
-    <section 
+    <section
       key="hero-section"
-      className="relative w-full bg-white overflow-hidden" 
+      className="relative w-full bg-white overflow-hidden"
       style={{ paddingTop: HEADER_HEIGHT }}
     >
       <div className="relative min-h-[calc(100vh-96px)] w-full flex justify-start items-start">
-        
-        {/* DESKTOP IMAGE LAYER - Only visible on lg (1024px) and up */}
+
+        {/* DESKTOP IMAGE — lg+ ONLY */}
         <div className="absolute inset-0 z-10 pointer-events-none hidden lg:block">
           <motion.div
             initial={{ opacity: 0, scale: 1.1 }}
@@ -27,22 +27,22 @@ const Hero = () => {
               alt="Nancy Kyere"
               fill
               priority
-              className="object-contain object-[95%_center] lg:object-[92%_center] origin-bottom"
+              className="object-contain object-[92%_center] origin-bottom"
             />
           </motion.div>
         </div>
 
         {/* CONTENT LAYER */}
         <div className="relative z-20 w-full max-w-[1400px] mx-auto px-6 sm:px-10 md:px-16 lg:px-24">
-          <div className="max-w-xl pt-12 sm:pt-20 md:pt-24 lg:pt-60 ml-0 text-left"> 
-            
-            {/* MOBILE & TABLET IMAGE - Disappears on desktop (lg+) */}
+          <div className="max-w-xl pt-16 sm:pt-20 md:pt-32 lg:pt-60 text-left">
+
+            {/* MOBILE + TABLET IMAGE */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="lg:hidden mb-10 relative w-full h-72 sm:h-96 md:h-[500px]"
+              className="lg:hidden mb-12 relative w-full h-72 sm:h-96 md:h-[520px]"
             >
               <Image
                 src="/profile-2.png"
@@ -53,7 +53,7 @@ const Hero = () => {
               />
             </motion.div>
 
-            {/* Headline Group */}
+            {/* HEADLINE */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -66,8 +66,8 @@ const Hero = () => {
               </h1>
             </motion.div>
 
-            {/* The "Plan" with Slow Reveal */}
-            <motion.span 
+            {/* PLAN LINE */}
+            <motion.span
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -77,17 +77,17 @@ const Hero = () => {
               You need a plan.
             </motion.span>
 
-            {/* Decorative Line - Animates Width */}
-            <motion.div 
+            {/* DIVIDER */}
+            <motion.div
               initial={{ opacity: 0, width: 0 }}
               whileInView={{ opacity: 1, width: 80 }}
               viewport={{ once: true }}
               transition={{ duration: 1, delay: 1.1 }}
-              className="h-[2px] bg-[#800020]/60 mt-8 mb-10" 
+              className="h-[2px] bg-[#800020]/60 mt-8 mb-10"
             />
 
-            {/* Body Paragraph */}
-            <motion.p 
+            {/* BODY */}
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -100,7 +100,7 @@ const Hero = () => {
               </span>
             </motion.p>
 
-            {/* CTA Button with Smooth Pulse & Scroll */}
+            {/* CTA */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -113,19 +113,21 @@ const Hero = () => {
                   e.preventDefault();
                   document.querySelector('#community')?.scrollIntoView({
                     behavior: 'smooth',
-                    block: 'start'
+                    block: 'start',
                   });
                 }}
-                /* Pulse Animation */
-                animate={{ 
-                  boxShadow: ["0px 0px 0px rgba(128,0,0,0)", "0px 0px 20px rgba(128,0,0,0.2)", "0px 0px 0px rgba(128,0,0,0)"]
+                animate={{
+                  boxShadow: [
+                    '0px 0px 0px rgba(128,0,0,0)',
+                    '0px 0px 20px rgba(128,0,0,0.2)',
+                    '0px 0px 0px rgba(128,0,0,0)',
+                  ],
                 }}
-                /* Hover & Tap Effects */
-                whileHover={{ scale: 1.05, backgroundColor: "#000" }}
+                whileHover={{ scale: 1.05, backgroundColor: '#000' }}
                 whileTap={{ scale: 0.98 }}
-                transition={{ 
-                  boxShadow: { duration: 2, repeat: Infinity, ease: "easeInOut" },
-                  scale: { type: "spring", stiffness: 400, damping: 10 }
+                transition={{
+                  boxShadow: { duration: 2, repeat: Infinity, ease: 'easeInOut' },
+                  scale: { type: 'spring', stiffness: 400, damping: 10 },
                 }}
                 className="inline-block bg-[#800020] text-white px-10 py-5 rounded-full text-[11px] uppercase tracking-[0.4em] font-bold shadow-2xl cursor-pointer transition-colors duration-300"
               >
@@ -133,7 +135,7 @@ const Hero = () => {
               </motion.a>
             </motion.div>
 
-            {/* Extra padding for mobile scrolling ease */}
+            {/* MOBILE SCROLL BREATHING ROOM */}
             <div className="h-20 lg:h-0" />
           </div>
         </div>
