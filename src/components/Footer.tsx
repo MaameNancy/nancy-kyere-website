@@ -1,13 +1,37 @@
 'use client';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Footer = () => {
+  const [showToast, setShowToast] = useState(false);
   const currentYear = new Date().getFullYear();
-  const WHATSAPP_LINK = "https://wa.me/233202522385";
-  const LINKEDIN_URL = "YOUR_ACTUAL_LINKEDIN_URL"; // Update this
+  
+  // Configuration
+  const WHATSAPP_LINK = "https://chat.whatsapp.com/Fmian7xrcypEL1avo23qiI?mode=gi_t";
+  const LINKEDIN_URL = "linkedin.com/in/nancy-kyere"; 
+  const EMAIL_ADDRESS = "hello@nancykyere.com";
+
+  // Auto-hide toast after 3 seconds
+  useEffect(() => {
+    if (showToast) {
+      const timer = setTimeout(() => setShowToast(false), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [showToast]);
+
+  const handleCopyEmail = (e) => {
+    e.preventDefault();
+    navigator.clipboard.writeText(EMAIL_ADDRESS);
+    setShowToast(true);
+    // Optional: still open the mail client after a slight delay if you want
+    setTimeout(() => {
+        window.location.href = `mailto:${EMAIL_ADDRESS}`;
+    }, 1000);
+  };
 
   return (
-    <footer className="bg-[#800020] text-white pt-24 pb-12 border-t border-white/10">
+    <footer className="relative bg-[#800020] text-white pt-24 pb-12 border-t border-white/10">
       <div className="max-w-[1440px] mx-auto px-8 md:px-16">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-24">
           
@@ -44,13 +68,14 @@ const Footer = () => {
           {/* Connect */}
           <div className="md:col-span-3">
             <h4 className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/50 mb-8">Connect</h4>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-row gap-4">
+              
               {/* LinkedIn */}
               <a 
-                href={LINKEDIN_URL}
+                href={`https://www.${LINKEDIN_URL}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white flex items-center justify-center transition-all duration-300 group"
+                className="w-12 h-12 rounded-full bg-white/10 hover:bg-white flex items-center justify-center transition-all duration-300 group"
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5 text-white group-hover:text-[#800020] transition-colors" fill="currentColor" viewBox="0 0 24 24">
@@ -58,23 +83,23 @@ const Footer = () => {
                 </svg>
               </a>
 
-              {/* Email */}
-              <a 
-                href="mailto:hello@nancykyere.com"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white flex items-center justify-center transition-all duration-300 group"
-                aria-label="Email"
+              {/* Email - Trigger Toast */}
+              <button 
+                onClick={handleCopyEmail}
+                className="w-12 h-12 rounded-full bg-white/10 hover:bg-white flex items-center justify-center transition-all duration-300 group"
+                aria-label="Copy Email"
               >
                 <svg className="w-5 h-5 text-white group-hover:text-[#800020] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-              </a>
+              </button>
 
               {/* WhatsApp */}
               <a 
                 href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#25D366] flex items-center justify-center transition-all duration-300 group"
+                className="w-12 h-12 rounded-full bg-white/10 hover:bg-[#25D366] flex items-center justify-center transition-all duration-300 group"
                 aria-label="WhatsApp"
               >
                 <svg className="w-5 h-5 text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
@@ -95,6 +120,21 @@ const Footer = () => {
           </p>
         </div>
       </div>
+
+      {/* SUCCESS TOAST */}
+      <AnimatePresence>
+        {showToast && (
+          <motion.div
+            initial={{ opacity: 0, y: 50, x: '-50%' }}
+            animate={{ opacity: 1, y: 0, x: '-50%' }}
+            exit={{ opacity: 0, y: 20, x: '-50%' }}
+            className="fixed bottom-12 left-1/2 z-[100] bg-white text-[#800020] px-8 py-4 rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.3)] flex items-center gap-4 border border-[#800020]/10"
+          >
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em]">Email Copied</span>
+            <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </footer>
   );
 };

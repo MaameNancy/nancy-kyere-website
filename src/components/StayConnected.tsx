@@ -48,7 +48,7 @@ const StayConnected = () => {
             
             {/* LinkedIn Card */}
             <motion.a
-              href="YOUR_LINKEDIN_URL"
+              href="https://www.linkedin.com/in/nancy-kyere/"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ x: 10 }}
@@ -94,7 +94,9 @@ const StayConnected = () => {
 
             {/* WhatsApp Community Card */}
             <motion.a
-              href="#community"
+  href="https://chat.whatsapp.com/Fmian7xrcypEL1avo23qiI?mode=gi_t"
+  target="_blank"
+  rel="noopener noreferrer"
               whileHover={{ x: 10 }}
               className="group block p-8 bg-gradient-to-br from-[#800020]/5 to-white border border-[#800020]/20 rounded-2xl hover:border-[#800020]/40 hover:shadow-xl transition-all duration-500"
             >

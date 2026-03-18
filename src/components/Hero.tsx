@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 const HEADER_HEIGHT = 96;
 
 const Hero = () => {
+  const WHATSAPP_LINK = "https://chat.whatsapp.com/Fmian7xrcypEL1avo23qiI?mode=gi_t";
+
   return (
     <section
       key="hero-section"
@@ -110,14 +112,9 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 1.7 }}
             >
               <motion.a
-                href="#community"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector('#community')?.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start',
-                  });
-                }}
+                href={WHATSAPP_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
                 animate={{
                   boxShadow: [
                     '0px 0px 0px rgba(128,0,0,0)',
