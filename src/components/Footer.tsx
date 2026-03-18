@@ -20,18 +20,18 @@ const Footer = () => {
     }
   }, [showToast]);
 
-  const handleCopyEmail = (e) => {
+const handleCopyEmail = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     navigator.clipboard.writeText(EMAIL_ADDRESS);
     setShowToast(true);
-    // Optional: still open the mail client after a slight delay if you want
     setTimeout(() => {
         window.location.href = `mailto:${EMAIL_ADDRESS}`;
     }, 1000);
   };
 
   return (
-    <footer className="relative bg-[#800020] text-white pt-24 pb-12 border-t border-white/10">
+    // ADDED id="connect" HERE
+    <footer id="connect" className="relative bg-[#800020] text-white pt-24 pb-12 border-t border-white/10 scroll-mt-20">
       <div className="max-w-[1440px] mx-auto px-8 md:px-16">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-24">
           
@@ -48,10 +48,10 @@ const Footer = () => {
             <h4 className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/50 mb-8">Navigate</h4>
             <ul className="space-y-4">
               {[
-                { name: 'About', path: '/#about' },
-                { name: 'Method', path: '/#method' },
-                { name: 'Why Me', path: '/#philosophy' },
-                { name: 'Community', path: '/#community' }
+                { name: 'About', path: '#about' }, // Removed the forward slash for smoother in-page nav
+                { name: 'Method', path: '#method' },
+                { name: 'Why Me', path: '#philosophy' },
+                { name: 'Community', path: '#community' }
               ].map((item) => (
                 <li key={item.name}>
                   <Link 
@@ -83,7 +83,7 @@ const Footer = () => {
                 </svg>
               </a>
 
-              {/* Email - Trigger Toast */}
+              {/* Email */}
               <button 
                 onClick={handleCopyEmail}
                 className="w-12 h-12 rounded-full bg-white/10 hover:bg-white flex items-center justify-center transition-all duration-300 group"
