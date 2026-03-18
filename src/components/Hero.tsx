@@ -23,7 +23,7 @@ const Hero = () => {
             className="relative h-full w-full"
           >
             <Image
-              src="/nancy-kyere-profile.jpg"
+              src="/profile-2.png"
               alt="Nancy Kyere"
               fill
               priority
