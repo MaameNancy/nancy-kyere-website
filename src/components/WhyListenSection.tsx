@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const reasons = [
   {
     number: "01",
-    title: "I&apos;m Living Proof",
+    title: "I'm Living Proof", // Fixed: Uses regular apostrophe in string
     description: "Business Admin to Web Developer in 90 days through a virtual intensive bootcamp. No CS degree. No traditional path. Just a strategic decision and relentless execution. If I can do it, you can too."
   },
   {
@@ -14,8 +14,8 @@ const reasons = [
   },
   {
     number: "03",
-    title: "I&apos;m Building With You",
-    description: "I&apos;m not a guru on a mountain. I&apos;m still in the trenches, still learning, still connecting. We&apos;re navigating this industry together."
+    title: "I'm Building With You", // Fixed: Uses regular apostrophe in string
+    description: "I'm not a guru on a mountain. I'm still in the trenches, still learning, still connecting. We're navigating this industry together."
   }
 ];
 
