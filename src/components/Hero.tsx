@@ -23,11 +23,11 @@ const Hero = () => {
             className="relative h-full w-full"
           >
             <Image
-              src="/profile-3.png"
+              src="/profile-3.png?v=1"
               alt="Nancy Kyere"
               fill
               priority
-              className="object-contain object-[92%_center] origin-bottom"
+              className="object-contain object-[115%_center] origin-bottom"
             />
           </motion.div>
         </div>
