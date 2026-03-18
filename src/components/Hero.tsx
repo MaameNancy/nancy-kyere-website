@@ -23,33 +23,35 @@ const Hero = () => {
             className="relative h-full w-full"
           >
             <Image
-              src="/hero-final.png?v=2"
+              src="/hero-final.png"
               alt="Nancy Kyere"
               fill
               priority
               className="object-contain object-[115%_center] origin-bottom"
+              sizes="100vw"
             />
           </motion.div>
         </div>
 
         {/* CONTENT LAYER */}
         <div className="relative z-20 w-full max-w-[1400px] mx-auto px-6 sm:px-10 md:px-16 lg:px-24">
-          <div className="max-w-xl pt-16 sm:pt-20 md:pt-32 lg:pt-60 text-left">
+          <div className="max-w-xl pt-12 sm:pt-20 md:pt-32 lg:pt-60 text-left">
 
-            {/* MOBILE + TABLET IMAGE */}
+            {/* MOBILE + TABLET IMAGE - Forced Height Fix */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="lg:hidden mb-12 relative w-full h-72 sm:h-96 md:h-[520px]"
+              className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] lg:hidden mb-8"
             >
               <Image
-                src="/profile-2.png"
+                src="/hero-final.png"
                 alt="Nancy Kyere"
                 fill
                 priority
                 className="object-contain object-center"
+                sizes="(max-width: 1024px) 100vw"
               />
             </motion.div>
 
