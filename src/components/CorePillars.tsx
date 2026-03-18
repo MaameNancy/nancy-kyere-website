@@ -53,13 +53,13 @@ const CorePillars = () => {
           transition={{ duration: 0.8 }}
           className="mb-12 sm:mb-20 max-w-4xl"
         >
-          <span className="text-[10px] uppercase tracking-[0.4em] font-bold text-maroon mb-6 block">
+          <span className="text-[10px] uppercase tracking-[0.4em] font-bold text-[#8f101d] mb-6 block">
             The Methodology
           </span>
           <h2 className="text-4xl sm:text-5xl lg:text-7xl font-serif tracking-tight leading-[1.05] text-gray-950 mb-6">
             Tech is vast. The journey is hard.
           </h2>
-          <p className="text-2xl sm:text-3xl lg:text-4xl font-serif italic text-maroon font-light">
+          <p className="text-2xl sm:text-3xl lg:text-4xl font-serif italic text-[#8f101d] font-light">
             But you have a system.
           </p>
         </motion.div>
@@ -75,14 +75,14 @@ const CorePillars = () => {
               transition={{ duration: 0.8, delay: index * 0.15 }}
               className="group relative"
             >
-              <div className="relative h-full bg-white rounded-2xl p-8 sm:p-10 border border-gray-100 hover:border-maroon/30 hover:shadow-2xl transition-all duration-500">
-                <span className="absolute top-4 right-4 text-[120px] sm:text-[140px] font-serif text-gray-100/50 group-hover:text-maroon/5 transition-colors duration-700 pointer-events-none select-none leading-none">
+              <div className="relative h-full bg-white rounded-2xl p-8 sm:p-10 border border-gray-100 hover:border-[#8f101d]/30 hover:shadow-2xl transition-all duration-500">
+                <span className="absolute top-4 right-4 text-[120px] sm:text-[140px] font-serif text-gray-100/50 group-hover:text-[#8f101d]/5 transition-colors duration-700 pointer-events-none select-none leading-none">
                   {pillar.number}
                 </span>
 
                 <div className="relative z-10">
-                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-maroon/10 group-hover:bg-maroon transition-colors duration-500 mb-6">
-                    <span className="text-maroon group-hover:text-white text-lg font-bold">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#8f101d]/10 group-hover:bg-[#8f101d] transition-colors duration-500 mb-6">
+                    <span className="text-[#8f101d] group-hover:text-white text-lg font-bold">
                       {pillar.number}
                     </span>
                   </div>
@@ -90,15 +90,15 @@ const CorePillars = () => {
                   <h3 className="text-2xl sm:text-3xl font-serif tracking-tight text-gray-950 mb-2 leading-tight">
                     {pillar.title}
                   </h3>
-                  <p className="text-base sm:text-lg text-maroon font-medium italic mb-6">
+                  <p className="text-base sm:text-lg text-[#8f101d] font-medium italic mb-6">
                     {pillar.subtitle}
                   </p>
-                  <div className="w-12 h-[2px] bg-maroon/40 mb-6 group-hover:w-full group-hover:bg-maroon transition-all duration-700" />
+                  <div className="w-12 h-[2px] bg-[#8f101d]/40 mb-6 group-hover:w-full group-hover:bg-[#8f101d] transition-all duration-700" />
                   <p className="text-base sm:text-lg text-gray-600 font-light leading-relaxed mb-8">
                     {pillar.desc}
                   </p>
-                  <div className="inline-flex items-center gap-3 px-4 py-2 bg-gray-50 group-hover:bg-maroon/5 rounded-full">
-                    <div className="w-1.5 h-1.5 rounded-full bg-maroon" />
+                  <div className="inline-flex items-center gap-3 px-4 py-2 bg-gray-50 group-hover:bg-[#8f101d]/5 rounded-full">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#8f101d]" />
                     <span className="text-[10px] uppercase tracking-[0.25em] font-bold text-gray-900">
                       {pillar.emphasis}
                     </span>
@@ -113,7 +113,7 @@ const CorePillars = () => {
         <div id="roadmap" className="pt-20 sm:pt-32 border-t border-gray-100 scroll-mt-20">
           <div className="text-center mb-12 sm:mb-20">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-gray-950 mb-6 px-4">
-              You aren't starting <span className="italic text-maroon font-light">from zero.</span>
+              You aren&apos;t starting <span className="italic text-[#8f101d] font-light">from zero.</span>
             </h2>
             
             <div className="overflow-x-auto max-w-4xl mx-auto mb-16 sm:mb-24 bg-gray-50/50 rounded-3xl p-4 sm:p-8">
@@ -122,7 +122,7 @@ const CorePillars = () => {
                     <tr className="border-b border-gray-200">
                       <th className="p-4 text-[10px] uppercase tracking-widest text-gray-400 font-bold">Transferable Trait</th>
                       <th className="p-4 text-[10px] uppercase tracking-widest text-gray-400 font-bold">Your Current Sector</th>
-                      <th className="p-4 text-[10px] uppercase tracking-widest text-maroon font-bold">The Tech Pivot</th>
+                      <th className="p-4 text-[10px] uppercase tracking-widest text-[#8f101d] font-bold">The Tech Pivot</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -132,7 +132,7 @@ const CorePillars = () => {
                         <td className="p-4 text-gray-500 text-sm italic font-light leading-relaxed">{item.nonTech}</td>
                         <td className="p-4 text-gray-900 font-medium text-sm">
                           <span className="flex items-center gap-2">
-                            <span className="w-1 h-1 bg-maroon rounded-full hidden sm:block" />
+                            <span className="w-1 h-1 bg-[#8f101d] rounded-full hidden sm:block" />
                             {item.tech}
                           </span>
                         </td>
@@ -144,7 +144,7 @@ const CorePillars = () => {
 
             <div className="max-w-3xl mx-auto">
                 <div className="text-center mb-10">
-                    <span className="text-[10px] uppercase tracking-[0.4em] font-bold text-maroon mb-2 block">The Roadmap</span>
+                    <span className="text-[10px] uppercase tracking-[0.4em] font-bold text-[#8f101d] mb-2 block">The Roadmap</span>
                     <h3 className="text-2xl sm:text-3xl font-serif">5 Days to Your Pivot</h3>
                 </div>
                 
@@ -155,7 +155,7 @@ const CorePillars = () => {
                       whileHover={{ x: 5 }}
                       className="flex items-center gap-4 sm:gap-6 p-5 sm:p-7 bg-white rounded-2xl shadow-sm border border-gray-100 text-left"
                     >
-                      <span className="text-[10px] sm:text-xs font-bold text-maroon tracking-widest border-r border-gray-100 pr-4">
+                      <span className="text-[10px] sm:text-xs font-bold text-[#8f101d] tracking-widest border-r border-gray-100 pr-4">
                         {step.day}
                       </span>
                       <h4 className="font-serif text-base sm:text-lg flex-grow text-gray-900">
@@ -174,7 +174,7 @@ const CorePillars = () => {
                 href="https://chat.whatsapp.com/Fmian7xrcypEL1avo23qiI"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative inline-flex items-center gap-4 bg-gray-950 text-white px-10 sm:px-14 py-4 sm:py-6 rounded-full text-[10px] sm:text-[11px] uppercase tracking-[0.3em] font-bold transition-all duration-300 hover:bg-maroon hover:shadow-2xl hover:scale-105"
+                className="group relative inline-flex items-center gap-4 bg-gray-950 text-white px-10 sm:px-14 py-4 sm:py-6 rounded-full text-[10px] sm:text-[11px] uppercase tracking-[0.3em] font-bold transition-all duration-300 hover:bg-[#8f101d] hover:shadow-2xl hover:scale-105"
               >
                 <span>Join our circle</span>
                 <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">

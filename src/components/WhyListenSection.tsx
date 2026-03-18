@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const reasons = [
   {
     number: "01",
-    title: "I'm Living Proof",
+    title: "I&apos;m Living Proof",
     description: "Business Admin to Web Developer in 90 days through a virtual intensive bootcamp. No CS degree. No traditional path. Just a strategic decision and relentless execution. If I can do it, you can too."
   },
   {
@@ -14,8 +14,8 @@ const reasons = [
   },
   {
     number: "03",
-    title: "I'm Building With You",
-    description: "I'm not a guru on a mountain. I'm still in the trenches, still learning, still connecting. We're navigating this industry together."
+    title: "I&apos;m Building With You",
+    description: "I&apos;m not a guru on a mountain. I&apos;m still in the trenches, still learning, still connecting. We&apos;re navigating this industry together."
   }
 ];
 
@@ -36,8 +36,8 @@ const WhyListenSection = () => {
             Why Listen to Me?
           </span>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif tracking-tight leading-[1.1] text-gray-950 max-w-3xl">
-            I'm not your teacher. <br />
-            <span className="italic text-[#800020] font-light">I'm your proof of concept.</span>
+            I&apos;m not your teacher. <br />
+            <span className="italic text-[#800020] font-light">I&apos;m your proof of concept.</span>
           </h2>
         </motion.div>
 
@@ -85,10 +85,10 @@ const WhyListenSection = () => {
         >
           <div className="max-w-3xl">
             <p className="text-xl sm:text-2xl font-normal text-gray-800 leading-relaxed mb-6">
-              I'm not here to teach you to code. I'm here to show you that <span className="font-semibold text-gray-900">the pivot is possible</span>—and to connect you with others who are walking the same path.
+              I&apos;m not here to teach you to code. I&apos;m here to show you that <span className="font-semibold text-gray-900">the pivot is possible</span>—and to connect you with others who are walking the same path.
             </p>
             <p className="text-base sm:text-lg text-gray-600 font-normal italic">
-              Think of me as your fellow traveler who's a few steps ahead, turning around to show you the map.
+              Think of me as your fellow traveler who&apos;s a few steps ahead, turning around to show you the map.
             </p>
           </div>
         </motion.div>

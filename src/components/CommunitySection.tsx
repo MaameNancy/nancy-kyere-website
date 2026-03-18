@@ -1,5 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const CommunitySection = () => {
   const WHATSAPP_LINK = "https://chat.whatsapp.com/Fmian7xrcypEL1avo23qiI?mode=gi_t";
@@ -14,7 +15,7 @@ const CommunitySection = () => {
   return (
     <section id="community" className="relative py-16 sm:py-20 bg-gradient-to-b from-gray-50 via-[#800020]/8 to-gray-50 overflow-hidden border-y border-gray-100">
       
-      {/* Animated Background Elements - Fixed with pointer-events-none and low z-index */}
+      {/* Animated Background Elements */}
       <motion.div
         animate={{ scale: [1, 1.2, 1], opacity: [0.4, 0.6, 0.4] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
@@ -26,7 +27,6 @@ const CommunitySection = () => {
         className="absolute bottom-20 left-20 w-96 h-96 bg-purple-500/15 rounded-full blur-3xl z-0 pointer-events-none"
       />
 
-      {/* Content Container - Fixed with relative z-10 to stay above background */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-10 text-center">
         
         {/* Animated Avatar Images */}
@@ -47,10 +47,11 @@ const CommunitySection = () => {
               whileHover={{ scale: 1.1, y: -5 }}
               className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full border-4 border-white shadow-xl cursor-pointer overflow-hidden bg-gray-200"
             >
-              <img 
+              <Image 
                 src={member.url} 
                 alt={member.alt}
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
               />
             </motion.div>
           ))}
@@ -74,7 +75,7 @@ const CommunitySection = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif tracking-tight leading-[1.1] text-gray-950 mb-6">
-            You don't have to <br />
+            You don&apos;t have to <br />
             <span className="italic text-[#800020]">pivot alone.</span>
           </h2>
         </motion.div>
