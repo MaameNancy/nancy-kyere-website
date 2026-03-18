@@ -63,8 +63,8 @@ const About = () => {
                 className="relative w-full h-full"
               >
                 <Image
-                  src="/nancy-kyere-profile.jpg"
-                  alt="Nancy Kyere"
+                  src="/profile-4.jpg"
+                  alt="Nancy Kyere"  
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
