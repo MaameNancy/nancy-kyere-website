@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import Header from '../src/components/Header';
 import Footer from '../src/components/Footer';
+import WhatsAppFloat from '../src/components/WhatsAppFloat';
 
 const inter = Inter({ 
   subsets: ['latin'], 
@@ -24,22 +25,9 @@ export const metadata: Metadata = {
     description: 'Stop planning. Start pivoting.',
     url: 'https://nancykyere.com',
     siteName: 'Nancy Kyere',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Nancy Kyere - Strategy & Pivot Consulting',
-      },
-    ],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Nancy Kyere' }],
     locale: 'en_US',
     type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Nancy Kyere | Strategy & Pivot Consulting',
-    description: 'Stop planning. Start pivoting.',
-    images: ['/og-image.jpg'],
   },
 };
 
@@ -48,9 +36,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${inter.variable} ${playfair.variable} scroll-smooth`}> 
       <body className="antialiased font-sans bg-white text-gray-950 selection:bg-maroon selection:text-white"> 
         <Header />
-        <main> 
-          {children}
-        </main>
+        <main>{children}</main>
+        <WhatsAppFloat /> 
         <Footer />
       </body>
     </html>

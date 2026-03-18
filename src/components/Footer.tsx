@@ -39,7 +39,7 @@ const Footer = () => {
           <div className="md:col-span-6">
             <h2 className="text-2xl font-serif mb-6 text-white">Nancy Kyere.</h2>
             <p className="text-white/70 font-light max-w-sm leading-relaxed">
-              Business Admin to Web Developer. Showing others the path from traditional careers to tech—without another degree.
+              From Business Admin to Web Developer. Showing others the path from traditional careers to tech—without another degree.
             </p>
           </div>
 

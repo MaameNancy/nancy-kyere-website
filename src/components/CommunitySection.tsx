@@ -111,7 +111,7 @@ const CommunitySection = () => {
           transition={{ duration: 0.8, delay: 0.7 }}
         >
           <motion.a
-            href="https://chat.whatsapp.com/YOUR_GROUP_LINK_HERE"
+            href="https://chat.whatsapp.com/Fmian7xrcypEL1avo23qiI?mode=gi_t"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
