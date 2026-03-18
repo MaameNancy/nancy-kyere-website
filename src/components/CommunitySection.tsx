@@ -2,7 +2,8 @@
 import { motion } from 'framer-motion';
 
 const CommunitySection = () => {
-  // Curated professional Black avatars from Unsplash
+  const WHATSAPP_LINK = "https://chat.whatsapp.com/Fmian7xrcypEL1avo23qiI?mode=gi_t";
+
   const communityMembers = [
     { url: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&q=80&w=200&h=200', alt: 'Tech professional' },
     { url: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200', alt: 'Software engineer' },
@@ -13,33 +14,20 @@ const CommunitySection = () => {
   return (
     <section id="community" className="relative py-16 sm:py-20 bg-gradient-to-b from-gray-50 via-[#800020]/8 to-gray-50 overflow-hidden border-y border-gray-100">
       
-      {/* Animated Background Elements */}
+      {/* Animated Background Elements - Fixed with pointer-events-none and low z-index */}
       <motion.div
-        animate={{ 
-          scale: [1, 1.2, 1],
-          opacity: [0.4, 0.6, 0.4]
-        }}
+        animate={{ scale: [1, 1.2, 1], opacity: [0.4, 0.6, 0.4] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-20 right-20 w-96 h-96 bg-[#800020]/15 rounded-full blur-3xl"
+        className="absolute top-20 right-20 w-96 h-96 bg-[#800020]/15 rounded-full blur-3xl z-0 pointer-events-none"
       />
       <motion.div
-        animate={{ 
-          scale: [1.2, 1, 1.2],
-          opacity: [0.3, 0.5, 0.3]
-        }}
+        animate={{ scale: [1.2, 1, 1.2], opacity: [0.3, 0.5, 0.3] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-20 left-20 w-96 h-96 bg-purple-500/15 rounded-full blur-3xl"
-      />
-      <motion.div
-        animate={{ 
-          scale: [1.2, 1, 1.2],
-          opacity: [0.3, 0.5, 0.3]
-        }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-20 left-20 w-96 h-96 bg-purple-500/15 rounded-full blur-3xl"
+        className="absolute bottom-20 left-20 w-96 h-96 bg-purple-500/15 rounded-full blur-3xl z-0 pointer-events-none"
       />
 
-      <div className="relative max-w-5xl mx-auto px-6 sm:px-10 text-center">
+      {/* Content Container - Fixed with relative z-10 to stay above background */}
+      <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-10 text-center">
         
         {/* Animated Avatar Images */}
         <motion.div
@@ -66,7 +54,6 @@ const CommunitySection = () => {
               />
             </motion.div>
           ))}
-          {/* Plus Avatar */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -111,12 +98,12 @@ const CommunitySection = () => {
           transition={{ duration: 0.8, delay: 0.7 }}
         >
           <motion.a
-            href="https://chat.whatsapp.com/Fmian7xrcypEL1avo23qiI?mode=gi_t"
+            href={WHATSAPP_LINK}
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="group inline-flex items-center gap-3 bg-[#800020] text-white px-12 py-5 rounded-full text-[11px] uppercase tracking-[0.3em] font-bold transition-all duration-300 hover:bg-gray-950 shadow-2xl hover:shadow-[#800020]/20"
+            className="group inline-flex items-center gap-3 bg-[#800020] text-white px-12 py-5 rounded-full text-[11px] uppercase tracking-[0.3em] font-bold transition-all duration-300 hover:bg-gray-950 shadow-2xl hover:shadow-[#800020]/20 cursor-pointer"
           >
             <span>Join our circle</span>
             <motion.svg 
@@ -131,7 +118,6 @@ const CommunitySection = () => {
           </motion.a>
         </motion.div>
 
-        {/* Subtle trust line */}
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
